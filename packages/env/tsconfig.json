@@ -1,0 +1,6 @@
+{
+  "extends": "@elysia-demo/config/tsconfig.base.json",
+  "compilerOptions": {
+    "strictNullChecks": true
+  }
+}

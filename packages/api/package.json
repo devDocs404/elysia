@@ -1,0 +1,29 @@
+{
+  "name": "@elysia-demo/api",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@elysia-demo/auth": "workspace:*",
+    "@elysia-demo/db": "workspace:*",
+    "@elysia-demo/env": "workspace:*",
+    "@trpc/client": "catalog:",
+    "@trpc/server": "catalog:",
+    "@types/pg": "^8.16.0",
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@elysia-demo/config": "workspace:*",
+    "elysia": "catalog:",
+    "typescript": "catalog:"
+  }
+}

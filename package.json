@@ -1,0 +1,50 @@
+{
+  "name": "elysia-demo",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "catalog": {
+      "dotenv": "^17.2.2",
+      "zod": "^4.1.13",
+      "typescript": "^5",
+      "@types/bun": "^1.3.4",
+      "elysia": "^1.4.21",
+      "@trpc/server": "^11.7.2",
+      "better-auth": "^1.4.9",
+      "@trpc/client": "^11.7.2",
+      "drizzle-orm": "^0.45.1"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "check-types": "turbo check-types",
+    "dev:native": "turbo -F native dev",
+    "dev:web": "turbo -F web dev",
+    "dev:server": "turbo -F server dev",
+    "db:push": "turbo -F @elysia-demo/db db:push",
+    "db:studio": "turbo -F @elysia-demo/db db:studio",
+    "db:generate": "turbo -F @elysia-demo/db db:generate",
+    "db:migrate": "turbo -F @elysia-demo/db db:migrate",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
+  "dependencies": {
+    "@elysia-demo/env": "workspace:*",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.12",
+    "@elysia-demo/config": "workspace:*",
+    "@types/bun": "catalog:",
+    "turbo": "^2.6.3",
+    "typescript": "catalog:",
+    "ultracite": "7.1.1"
+  },
+  "packageManager": "bun@1.3.2"
+}
