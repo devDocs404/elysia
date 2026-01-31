@@ -1,33 +1,18 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "pipeline": {
-    "build": {
-      "env": [
-        "BETTER_AUTH_SECRET",
-        "BETTER_AUTH_URL",
-        "CORS_ORIGIN",
-        "DATABASE_URL",
-        "DATABASE_URL_DIRECT"
-      ],
-      "outputs": ["dist/**", ".next/**"]
-    },
-    "dev": {
-      "env": [
-        "BETTER_AUTH_SECRET",
-        "BETTER_AUTH_URL",
-        "CORS_ORIGIN",
-        "DATABASE_URL",
-        "DATABASE_URL_DIRECT"
-      ],
-      "cache": false
-    }
-  },
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**"],
+      "env": [
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "CORS_ORIGIN",
+        "DATABASE_URL",
+        "DATABASE_URL_DIRECT"
+      ],
     },
     "lint": {
       "dependsOn": ["^lint"]
