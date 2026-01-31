@@ -6,7 +6,7 @@ import { cors } from "@elysiajs/cors";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { Elysia } from "elysia";
 
-const app = new Elysia()
+export const app = new Elysia()
   .use(
     cors({
       origin: env.CORS_ORIGIN,
