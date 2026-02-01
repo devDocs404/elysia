@@ -1,14 +1,10 @@
-import type { Context as ElysiaContext } from "elysia";
+import type { NextRequest } from "next/server";
 
 import { auth } from "@elysia-demo/auth";
 
-export type CreateContextOptions = {
-  context: ElysiaContext;
-};
-
-export async function createContext({ context }: CreateContextOptions) {
+export async function createContext(req: NextRequest) {
   const session = await auth.api.getSession({
-    headers: context.request.headers,
+    headers: req.headers,
   });
   return {
     session,

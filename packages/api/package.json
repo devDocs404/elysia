@@ -19,11 +19,11 @@
     "@types/pg": "^8.16.0",
     "dotenv": "catalog:",
     "drizzle-orm": "catalog:",
+    "next": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@elysia-demo/config": "workspace:*",
-    "elysia": "catalog:",
     "typescript": "catalog:"
   }
 }
