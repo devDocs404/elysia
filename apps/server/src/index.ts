@@ -3,10 +3,11 @@ import { appRouter } from "@elysia-demo/api/routers/index";
 import { auth } from "@elysia-demo/auth";
 import { env } from "@elysia-demo/env/server";
 import { cors } from "@elysiajs/cors";
+import { node } from "@elysiajs/node";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { Elysia } from "elysia";
 
-export const app = new Elysia()
+const app = new Elysia({ adapter: node() })
   .use(
     cors({
       origin: env.CORS_ORIGIN,
